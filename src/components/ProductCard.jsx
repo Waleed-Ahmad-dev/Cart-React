@@ -1,9 +1,15 @@
+/* eslint-disable react/prop-types */
 
-function ProductCard() {
+import '../styles/productCard.css'
+
+function ProductCard(props) {
     return (
-        <div>
-            <h1>ProductCard</h1>
-        </div>
+        <div className="product-card">
+            <img src={props.image} alt={props.title} className="product-image" />
+            <h2 className="product-title">{props.title}</h2>
+            <p className="product-price">${props.price}</p>
+            <button onClick={() => {}} className="add-to-cart-btn">Add to Cart</button>
+    </div>
     )
 }
 
