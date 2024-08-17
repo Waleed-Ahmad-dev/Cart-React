@@ -3,38 +3,45 @@ body {
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
 .home-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Ensure no overflow from the image */
 }
+
 .bg-image {
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100%;
-    position: fixed;
+    position: absolute; /* Use absolute positioning to cover the entire viewport */
     top: 0;
     left: 0;
     z-index: -1;
     transition: filter 0.5s ease;
     cursor: pointer;
 }
+
 .bg-image:hover {
     filter: brightness(0.8); /* Increase brightness on hover */
 }
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.76); /* Dark overlay to make text more readable */
     padding: 20px;
     text-align: center;
     border-radius: 10px;
+    max-width: 80%;
+    width: 100%;
+    margin: auto;
 }
 
 .headline {
@@ -61,4 +68,43 @@ body {
 
 .cta-btn:hover {
     background-color: darkgreen;
+}
+
+/* Responsive Design for Image and Text */
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .overlay {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .overlay {
+        max-width: 95%;
+    }
 }
