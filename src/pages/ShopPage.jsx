@@ -13,8 +13,10 @@ function ShopPage() {
     }, []);
     return (
         <>
-        <div className="shop-container">
+        <div className="backBtn">
             <BackButton />
+        </div>
+        <div className="shop-container">
             <h1>Shop</h1>
             <div className="products-grid">
                 {products.map(product => (

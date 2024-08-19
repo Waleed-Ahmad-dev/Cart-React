@@ -8,3 +8,9 @@
     border-radius: 10px;
     flex-direction: row;
 }
+.backBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
